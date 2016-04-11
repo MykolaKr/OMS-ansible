@@ -1,0 +1,6 @@
+# Configurations
+- name: Config Jenkins
+  template: src=jenkins/{{ item }}.j2 dest={{ jenkins_home }}/{{ item }} owner=jenkins group=jenkins mode=0644
+  with_items:
+  - "{{ _jenkins_cfg }}"
+  notify: restart jenkins

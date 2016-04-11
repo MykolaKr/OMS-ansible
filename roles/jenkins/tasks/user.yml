@@ -1,0 +1,5 @@
+# Users
+- name: Create Jenkins User folder
+  file: path={{ jenkins_home }}/users/{{ jenkins_security_user }}/ mode=0775 owner=jenkins group=jenkins state="directory" recurse=yes
+- name: Copy Jenkins User config
+  copy: src=jenkins/users/{{ jenkins_security_user }}/config.xml dest={{ jenkins_home }}/users/{{ jenkins_security_user }}/config.xml mode=0775 owner=jenkins group=jenkins
