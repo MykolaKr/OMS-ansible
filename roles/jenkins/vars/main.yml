@@ -1,2 +1,15 @@
 ---
 jenkins_home: /var/lib/jenkins
+#create default security user
+jenkins_security_user: devops
+# Config files templates
+_jenkins_cfg:
+  - config.xml
+  - hudson.tasks.Maven.xml
+  - jenkins.mvn.GlobalMavenConfig.xml
+  - jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin.xml
+# Jenkins Jobs
+_jenkins_jbs:
+  - oms-master
+  - oms-dev
+  - deploy_OMS

@@ -2,3 +2,5 @@
 - include: install.yml
 - include: plugins.yml
   when: jenkins_plugin is defined
+- include: user.yml
+  when: enable_security is defined
